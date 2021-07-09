@@ -2,18 +2,82 @@
   <v-app>
     <v-container fluid class="pa-0 ma-0" app >
       <!-- 홈버튼 -->
-      <v-row >
-        <v-col md="2" sm="6" id="col1">
-          <div class="gohome">
+      <v-row class="header">
+        <div class="col-md-2">
+          <a href="/" id="gohome">
+        AAC
+          </a>
+        </div>
+        <div class="col-md-2">
+          <a href="/movielist" class="menu white--text">
+        리뷰
+          </a>
+        </div>
+        <div class="col-md-2">
+          <a href="/board" class="menu white--text">
+        게시판
+          </a>
+        </div>
+        <div class="col-md-2">
+          <a href="/news" class="menu white--text">
+        뉴스
+          </a>
+        </div>
+        <div class="col-md-2">
+          <a href="/test" class="menu white--text">
+        함께봐요
+          </a>
+        </div>
+        <!-- <v-col md="2" sm="6" id="col1" >
+          <div class="gohome" >
               <a dark href="/" id="gohome"  
               class="red--text font-weight-black pa-3">
               AAC
               </a>
             </div>
+        </v-col> -->
+        
+        <!-- 웹 탭바 -->
+        <!-- <v-col md="8" id="col2" >
+        <v-tabs class="header mx-auto" 
+        background-color="rgba(0,0,0,0.1)" 
+        color="white" id="tabs"
+        >
+        <v-tabs-slider color="rgba(255, 0, 0,1)"></v-tabs-slider> 
+          <v-tab  v-for="item in items"
+              :key="item.id"
+              class="no-gutters  offset-2  font-weight-black white--text" id="tabItem" 
+              :to="item.to"
+              >
+            {{item.title}}
+          </v-tab>
+          </v-tabs>
+        </v-col> -->
+        <!-- 언어변경 -->
+        <v-col md="1" id="col3">
+          <div class="col-md-2 login">
+            <v-btn
+            to="/" 
+            id="login"
+            class=" font-weight-black">
+                <v-icon>mdi-account-circle</v-icon>
+            </v-btn>
+          </div>
+        </v-col>
+        <!-- 웹 로그인버튼 -->
+        <v-col md="1" id="col3">
+          <div class="col-md-2  login">
+            <v-btn
+            to="/" 
+            id="login"
+            class=" font-weight-black">
+                <v-icon>mdi-account-circle</v-icon>
+            </v-btn>
+          </div>
         </v-col>
         <!-- 모바일 로그인버튼 -->
-        <v-col id="col4" sm="6">
-          <!-- <v-spacer></v-spacer> -->
+        <!-- <v-spacer></v-spacer> -->
+        <!-- <v-col id="col4" sm="6">
            <div class="">
             <v-btn  
             to="/" 
@@ -27,34 +91,7 @@
               <v-icon>mdi-format-list-bulleted-square</v-icon>
             </v-btn>
           </div>
-        </v-col>
-        <!-- 웹 탭바 -->
-        <v-col md="8" id="col2">
-        <v-tabs class="header" 
-        background-color="rgba(0,0,0,0)" 
-        color="white" id="tabs"
-        >
-        <v-tabs-slider color="rgba(0, 0, 0,0)"></v-tabs-slider> 
-          <v-tab  v-for="item in items"
-              :key="item.id"
-              class="no-gutters col-md-2  font-weight-black white--text" id="tabItem" 
-              :to="item.to"
-              >
-            {{item.title}}
-          </v-tab>
-          </v-tabs>
-        </v-col>
-        <!-- 웹 로그인버튼 -->
-        <v-col md="2" id="col3">
-          <div class="col-md-2  login">
-            <v-btn
-            to="/" 
-            id="login"
-            class=" font-weight-black">
-                <v-icon>mdi-account-circle</v-icon>
-            </v-btn>
-          </div>
-        </v-col>
+        </v-col> -->
       </v-row>
 
       <!-- 모바일 버티컬탭 -->
@@ -113,8 +150,7 @@ export default {
           { id:1,title: '리뷰', to:'/movieList' },
           { id:2,title: '게시판', to:'/board'},
           { id:3,title: '뉴스', to:'/news'},
-          { id:4,title: '함께 봐요', to:'/together' },
-          { id:5,title: '실시간 순위', to:'/test'},
+          { id:4,title: '함께 봐요', to:'/test' },
           ],
         right: null,
         state:false,
@@ -142,7 +178,7 @@ export default {
 }  
 .container{
   display: inline;
-  background-color: rgba(0,5,10,1);
+  background-color: rgba(0,0,0,1);
 }
 .row{
   display: flex;
@@ -152,26 +188,32 @@ export default {
   margin: 0px;
   padding: 0px;
   width: 100%;
-  /* position: fixed; */
-  display:contents;
+  position: fixed;
+  /* display:ab; */
   top: 0;
   left: 0;
   z-index: 3;
+}
+.menu{
+  font-size: 2em;
+  font-weight: 900;
+  
 }
 #gohome {
   width: 100%;
   height: 48px;
   padding: 0px;
-  margin-bottom: 10px;
+  margin-left: 30px;
   font-size: 4em;
   font-weight:900;
+  color: red;
 }
-.gohome {
+/* .gohome {
   color: red;
   padding: 0px;
    height: 100px;
    left: 30%;
-}
+} */
 .col-md-2.login{
   padding: 7px;
   text-align: center; 
@@ -184,9 +226,9 @@ export default {
     margin: -2px;
     
 }
-.col-md-2.gohome{
+/* .col-md-2.gohome{
   padding-top: 0px;
-}
+} */
 
 #login{
   font-size: 35px;

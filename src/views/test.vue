@@ -2,64 +2,88 @@
   <v-container  >
     <v-row>
       <v-col cols="11" class="mx-auto">
-    <v-card class="" style="padding:0; margin:0; border-radius:30px;">
+        <v-card class="" style="padding:0; margin:0; border-radius:30px;">
           <v-img
             class="white--text"
             height="120px"
             src="https://cdn.pixabay.com/photo/2016/05/11/13/20/keyboard-1385706_960_720.jpg"
             style="border-radius:10px;"
-          ><v-card-title>채팅방</v-card-title>
+          >
+            <v-card-title>채팅방</v-card-title>
           </v-img>
         </v-card>
       </v-col>
     </v-row>
-
     <v-row style="text-align:center; margin-top:50px;">
       <v-col col="10" offset="1" >
         <!-- 채팅방이름 ,참여인원수변수 , 클릭이벤트 -->
-        <v-card class="chatroom" >
+        <v-card class="chatroom " >
           <v-img
             class="white--text"
             height="240px"
             src="https://cdn.pixabay.com/photo/2016/05/11/13/20/keyboard-1385706_960_720.jpg"
             style="border-top-left-radius:20px; border-top-right-radius:20px;"
           >
-          비트컴퓨터
+          비트컴퓨터1
           </v-img>
-          <button type="button" style="background-color:red; color:white; padding:10px; margin:10px;">입장하기</button>
+            <div class="d-inline-flex">
+              <v-icon class="icon">mdi-account-circle</v-icon>
+              <h4>number</h4>
+              <button type="button" >
+                입장하기
+              </button>
+            </div>
         </v-card>
-        <v-card class="chatroom">
-          <v-img
-            class="white--text"
-            height="241px"
-            src="https://cdn.pixabay.com/photo/2016/05/11/13/20/keyboard-1385706_960_720.jpg"
-            style="border-top-left-radius:20px; border-top-right-radius:20px;"
-          >
-          비트컴퓨터
-          </v-img>
-          <button type="button" style="background-color:red; color:white; padding:10px; margin:10px;">입장하기</button>
-        </v-card>
-        <v-card class="chatroom">
+        <v-card class="chatroom " >
           <v-img
             class="white--text"
             height="240px"
             src="https://cdn.pixabay.com/photo/2016/05/11/13/20/keyboard-1385706_960_720.jpg"
             style="border-top-left-radius:20px; border-top-right-radius:20px;"
           >
-          비트컴퓨터
+          비트컴퓨터1
           </v-img>
-          <button type="button" style="background-color:red; color:white; padding:10px; margin:10px;">입장하기</button>
+            <div class="d-inline-flex">
+              <v-icon class="icon">mdi-account-circle</v-icon>
+              <h4>number</h4>
+              <button type="button" >
+                입장하기
+              </button>
+            </div>
         </v-card>
-        <v-card class="chatroom">
+        <v-card class="chatroom " >
           <v-img
             class="white--text"
             height="240px"
             src="https://cdn.pixabay.com/photo/2016/05/11/13/20/keyboard-1385706_960_720.jpg"
-            style="border-top-left-radius:20px; border-top-right-radius:20px; "
+            style="border-top-left-radius:20px; border-top-right-radius:20px;"
           >
-          비트컴퓨터
+          비트컴퓨터1
           </v-img>
-          <button type="button" style="background-color:red; color:white; padding:10px; margin:10px;">입장하기</button>
+            <div class="d-inline-flex">
+              <v-icon class="icon">mdi-account-circle</v-icon>
+              <h4>number</h4>
+              <button type="button" >
+                입장하기
+              </button>
+            </div>
+        </v-card>
+        <v-card class="chatroom " >
+          <v-img
+            class="white--text"
+            height="240px"
+            src="https://cdn.pixabay.com/photo/2016/05/11/13/20/keyboard-1385706_960_720.jpg"
+            style="border-top-left-radius:20px; border-top-right-radius:20px;"
+          >
+          비트컴퓨터1
+          </v-img>
+            <div class="d-inline-flex">
+              <v-icon class="icon">mdi-account-circle</v-icon>
+              <h4>number</h4>
+              <button type="button" >
+                입장하기
+              </button>
+            </div>
         </v-card>
       </v-col>
     </v-row>
@@ -69,7 +93,6 @@
         </div>
       </v-col>
     </v-row >  
-    
   </v-container>
 </template>
 
@@ -105,8 +128,21 @@ export default {
 }
 
 .chatroom button{
-  
+  background-color:red; 
+  color:white; 
+  padding:10px; 
+  margin:10px; 
+  position: relative;
+  right: -50px;
   border-radius: 30px;
+}
+.chatroom h4{
+  top: 17px;
+  left: -30px;
+  position: relative;
+}
+.icon {
+  left: -35px;
 }
 
 

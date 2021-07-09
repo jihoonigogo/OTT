@@ -1,7 +1,17 @@
 <template>
-  <v-container class="" >
+  <v-container class="" fluid>
     <!-- 웹 캐러셀 -->
-     <v-carousel
+    
+        
+        <video autoplay loop class="mainvideo" >
+          <source src="../assets/blackwidow.mp4" type="video/mp4"/>
+          123123
+        </video>
+        
+        
+       
+    
+     <!-- <v-carousel
       cycle
       height="65vh"
       hide-delimiters
@@ -14,11 +24,9 @@
       class="carousel-item"
     >
         <v-row >
-          <!-- 캐러셀 이미지 -->
          <v-col md="9" sm="12" id="movieInfoBanner" >
         <img :src="slide.img" >
          </v-col>
-         <!-- 캐러셀 텍스트 -->
          <v-col md="3" sm="12" class="white--text  intro">
            <div>
           <h1><strong>{{slide.title}}</strong></h1>
@@ -35,7 +43,7 @@
         </v-row>
       
     </v-carousel-item>
-  </v-carousel>
+  </v-carousel> -->
 
   <v-content>
     <v-row>
@@ -66,6 +74,7 @@
             width="280px"
             @click="toggle"
             to="/"
+            hover
             >
             <h1 style="right:-18%;">{{i+1}}</h1>
             <v-img
@@ -88,7 +97,7 @@
   <v-row>
     <v-col cols="12" md="12">
       <v-sparkline
-      
+      class="line"
     :value="value"
     :gradient="gradient"
     :smooth="radius || false"
@@ -101,6 +110,7 @@
     :auto-line-width="autoLineWidth"
     auto-draw
     
+    
   ></v-sparkline>
     </v-col>
   </v-row>
@@ -111,10 +121,10 @@
  const gradients = [
     ['#222'],
     ['#42b3f4'],
-    ['red', 'orange', 'yellow'],
-    ['purple', 'violet'],
-    ['#00c6ff', '#F0F', '#FF0'],
-    ['#f72047', '#ffd200', '#1feaea'],
+    ['red', 'red', 'red'],
+    ['puredrple', 'red'],
+    ['#00c6ff', 'red', '#FF0'],
+    ['#f72047', 'red', 'red'],
   ]
 export default {
   data: () => ({
@@ -122,6 +132,9 @@ export default {
     netList:null,
     watList:null,
       model: 0,
+        videos: [
+          {id:1,title:'blackwidow',video:'@/assets/blackwidow.mp4'}
+        ],
         slides: [
           {title:'베놈2', to:"" ,syno:'blabla... ',img:'https://cdn.eyesmag.com/content/uploads/posts/2021/02/17/disney-cruella-new-poster-emma-stone-1-d28a46b1-8f9f-49ab-b405-7efaf62d55c2.jpg'},
           {title:'크루엘라', to:"" ,syno:'blabla',img:'https://cdn.ilyoseoul.co.kr/news/photo/202004/384931_301204_3429.jpg'},
@@ -131,13 +144,13 @@ export default {
           {title:'오늘점심', to:"" ,syno:'돈까스',img:'https://t1.daumcdn.net/thumb/R720x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/6idc/image/XIuGoXWxOpHLJpctmWaRW7g2MKc.jpeg'},
           {title:'베놈2', to:"" ,syno:'blabla... ',img:'https://cdn.eyesmag.com/content/uploads/posts/2021/02/17/disney-cruella-new-poster-emma-stone-1-d28a46b1-8f9f-49ab-b405-7efaf62d55c2.jpg'},
          ],
-         width: 2,
+         width: 3,
       radius: 10,
       padding: 8,
       lineCap: 'round',
       gradient: gradients[5],
-      value: [0, 2, 5, 9, 5, 10, 3, 5, 0, 0, 1, 8, 2, 9, 0],
-      gradientDirection: 'top',
+      value: [1,10,0,10,0,0,0,5,10,0],
+      gradientDirection: 'tob',
       gradients,
       fill: false,
       type: 'trend',
@@ -232,10 +245,11 @@ export default {
 
 /* 추천목록 */
 .netRec{
-  background-color: black;
+  background-color: rgba(0, 0, 255, 0.2);
   /* border: solid 1px white; */
   margin-bottom: 10px;
   padding: 0px;
+  top: -10%;
 }
 .card-item{
     margin: 30px;
@@ -249,7 +263,7 @@ export default {
     transform-style: preserve-3d;
     perspective: 700px;
     animation: spin 5s infinite linear;
-    background-color: black;
+    /* background-color: black; */
     margin: 0px;
     padding: 0px;
 }
@@ -272,6 +286,10 @@ export default {
     
 
 }
+/* .line {
+  transform: translateZ(20px);
+  animation: spin 1s;
+} */
 @keyframes spin {
    from{
     transform: rotateY(-20deg);
@@ -281,6 +299,22 @@ export default {
     
 }
 }
+.mainvideo{
+  position: relative;
+  max-height: 90vh;
+  width: 100%;
+  object-fit: fill;
+  overflow: hidden;
+}
+/* .mainvideo video{
+  position: absolute;
+  width: 100%;
+  object-fit: fill;
+  max-height: 50vh;
+} */
+
+
+
 
 /* 모바일 */
 @media screen and  (max-width:768px) {
