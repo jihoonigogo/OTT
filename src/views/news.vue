@@ -2,53 +2,86 @@
 
   <v-container id="app">
     <!-- 상단 공백 -->
-      <v-row >
+    <v-row >
       <v-col cols="12" >
         <div class="void" >
         </div>
       </v-col>
     </v-row >
 
-    <!-- 넷플릭스 공식 예고편 슬라이드 -->
-      <v-row   class="dot">
-      <v-col cols="8" offset="2" >
-        
-        <v-carousel
-      
-      height="65vh"
-      hide-delimiters
-      show-arrows-on-hover
-      id="mainCarousel"
-     >
-    <v-carousel-item
-      v-for="(slide, i) in slides"
-      :key="i"
-      class="carousel-item"
+    <v-sheet
+    class="mx-auto"
+    elevation="10"
+    max-width="1500"
+    dark
+    style="background-color:black;"
     >
-        <v-row >
-          <!-- 캐러셀 이미지 -->
-         <v-col md="9" sm="12" id="movieInfoBanner" >
-        <img :src="slide.img" >
-         </v-col>
-         <!-- 캐러셀 텍스트 -->
-         <v-col md="3" sm="12" class="white--text  intro">
-           <div>
-          <h5><strong>{{slide.title}}</strong></h5>
-           <br/>
-          <a href="/moviereview" id="detailLink">상세보기</a>
-          <v-btn dark type="button" to="/movieReview" class="detailBtn"> 뉴스보기 </v-btn>
-           </div>
-      </v-col>
-        
-        </v-row>
-      
-    </v-carousel-item>
-  </v-carousel>
-      </v-col>
-      </v-row>
-      
+      <v-slide-group
+        v-model="model"
+        class="pa-4"
+        show-arrows
+      >
+        <v-slide-item
+          v-for="slide in slides"
+          :key="slide"
+          v-slot="{ active, toggle }"
+        >
+          <v-card
+            :color="active ? 'red' : 'white'"
+            class="ma-4"
+            height="220"
+            width="310"
+            @click="toggle"
+          >
+              <v-img
+                width="310px"
+                height="160px"
+                :src="slide.img"
+              >
+              </v-img>
+              <h3 class="black--text">{{slide.title}}</h3>  
+          </v-card>
+        </v-slide-item>
+      </v-slide-group>
+  </v-sheet>
+    
+<!--     
+        <v-sheet
+    class="mx-auto"
+    elevation="10"
+    max-width="1500"
+  >
+    <v-slide-group
+      v-model="model"
+      class="pa-4"
+      show-arrows
+    >
+          <v-slide-item
+            v-for="slide in slides"
+            :key="slide"
+            v-slot="{ active, toggle }"
+          >
+            <v-card
+            :color="active ? 'red' : 'black'"
+            class="ma-5 "
+            max-height="500px"
+            width="310px"
+            @click="toggle"
+            >
+            <v-img
+              width="auto"
+              height="auto"
+              :src="slide.img"
+            >
+            </v-img>
+            <h3 class="white--text align-end">{{slide.title}}</h3>
+          </v-card>
+            </v-slide-item>
+          </v-slide-group>
+          </v-sheet> -->
 
-     <!-- 뉴스 목록 -->
+  
+   
    <v-row justify="center">
       <v-col cols="8"  >
   <v-data-table
@@ -206,13 +239,14 @@
 
     data: () => ({
     slides: [
-          {title:'넷플릭스 국내 OTT 점유율 50% 근접..', to:"" ,syno:'blabla... ',img:'https://cdn.eyesmag.com/content/uploads/posts/2021/02/17/disney-cruella-new-poster-emma-stone-1-d28a46b1-8f9f-49ab-b405-7efaf62d55c2.jpg'},
-          {title:'크루엘라', to:"" ,syno:'blabla',img:'https://cdn.ilyoseoul.co.kr/news/photo/202004/384931_301204_3429.jpg'},
-          {title:'귀멸의칼날', to:"" ,syno:'blabla',img:'https://cdn.eyesmag.com/content/uploads/posts/2021/02/17/disney-cruella-new-poster-emma-stone-1-d28a46b1-8f9f-49ab-b405-7efaf62d55c2.jpg'},
-          {title:'컨져링3', to:"" ,syno:'blabla',img:'https://www.sports-g.com/wp-content/uploads/2018/12/%EC%98%81%ED%99%94-%EC%8A%A4%ED%8C%8C%EC%9D%B4%EB%8D%94%EB%A7%A83-%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg'},
-          {title:'콰이어트플레이스2', to:"" ,syno:'blabla',img:'https://img.hankyung.com/photo/202106/01.26629700.1.jpg'},
-          {title:'오늘점심', to:"" ,syno:'돈까스',img:'https://t1.daumcdn.net/thumb/R720x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/6idc/image/XIuGoXWxOpHLJpctmWaRW7g2MKc.jpeg'},
-          {title:'베놈2', to:"" ,syno:'blabla... ',img:'https://cdn.eyesmag.com/content/uploads/posts/2021/02/17/disney-cruella-new-poster-emma-stone-1-d28a46b1-8f9f-49ab-b405-7efaf62d55c2.jpg'},
+          {title:'넷플릭스 국내 OTT 점유율 50% 근접..', to:"" ,syno:'blabla... ',img:'http://k.kakaocdn.net/dn/BWu0e/btq8TQ3UtMm/bYMONTGXVk2tt8WM68nUN0/img.jpg'},
+          {title:'크루엘라', to:"" ,syno:'blabla',img:'http://k.kakaocdn.net/dn/BWu0e/btq8TQ3UtMm/bYMONTGXVk2tt8WM68nUN0/img.jpg'},
+          {title:'귀멸의칼날', to:"" ,syno:'blabla',img:'http://k.kakaocdn.net/dn/BWu0e/btq8TQ3UtMm/bYMONTGXVk2tt8WM68nUN0/img.jpg'},
+          {title:'컨져링3', to:"" ,syno:'blabla',img:'http://k.kakaocdn.net/dn/BWu0e/btq8TQ3UtMm/bYMONTGXVk2tt8WM68nUN0/img.jpg'},
+          {title:'콰이어트플레이스2', to:"" ,syno:'blabla',img:'http://k.kakaocdn.net/dn/BWu0e/btq8TQ3UtMm/bYMONTGXVk2tt8WM68nUN0/img.jpg'},
+          {title:'오늘점심', to:"" ,syno:'돈까스',img:'http://k.kakaocdn.net/dn/BWu0e/btq8TQ3UtMm/bYMONTGXVk2tt8WM68nUN0/img.jpg'},
+          {title:'베놈2', to:"" ,syno:'blabla... ',img:'http://k.kakaocdn.net/dn/BWu0e/btq8TQ3UtMm/bYMONTGXVk2tt8WM68nUN0/img.jpg'},
+          {title:'베놈2', to:"" ,syno:'blabla... ',img:'http://k.kakaocdn.net/dn/BWu0e/btq8TQ3UtMm/bYMONTGXVk2tt8WM68nUN0/img.jpg'}
          ],
 
 
@@ -430,120 +464,10 @@
 </script>
 
 <style scoped>
-#detailLink{
-  display: none;
-}
-#mobileCarousel{
-  display: none;
-}  
-#mainCarousel{
-  margin-bottom: 10px;
-  position: relative;
-  width: 80vw;
-  height: 50vh;
-}
-#mainCarousel img{
-  height: 40vh;
-  width: 30vw;
-  position: relative;
-  top: 10%;
-  left: 0%;
-  /* transform-origin: 50% 50% -500px; */
-  /* outline: 1px solid transparent;
-  position: absolute;
-  width: 1200px;
-  height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 5px dashed white;
-  background-color: rgba(0,0,0,0.9); */
-}
-/* .carousel-item:nth-child(1){
-  transform: rotateY(0deg) translateZ(1200px);
-}
-.carousel-item:nth-child(2){
-  transform: rotateY(60deg) translateZ(1200px);
-}
-.carousel-item:nth-child(3){
-  transform: rotateY(120deg) translateZ(1200px);
-}
-.carousel-item:nth-child(4){
-  transform: rotateY(180deg) translateZ(1200px);
-}
-.carousel-item:nth-child(5){
-  transform: rotateY(240deg) translateZ(1200px);
-}
 
-.carousel-item:nth-child(6){
-  transform: rotateY(300deg) translateZ(1200px);
-} */
-
-.carousel-item{
-  /* position: absolute; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-  
-
-
-/* 영화 제목 및 시놉시스 */
-.intro{
-  position:relative;
-  /* color: red; */
-  width:50vw;
-  height: 50vh;
-  top:50%;
-  background-color: black;
-  align-self: center;
-  right: 10%;
-  padding-right: 30px;
-  padding:0px;
-  margin-top: 100px;
-}
-/* 영화 정보 팝업  */
-.detailBtn{
-  background-color: gray;
-  border-radius: 5px;
-  height: 30px;
-  width: 90px;
-}
-
-
-
-.col, .row{
-    /* background-color: white; */
-    color: white;
-}
-/* .topBoard{
-  height: 300px;
-  width: 600px;
-  display: inline-flex;
-  border: 1px white solid;
-  margin-bottom: 50px;
-} */
-.void{
-    height: 50px;
-}
-.hotBoard{
-   margin: 0px;
-   height: 350px;
-}
-/* 
-.netyou{
-  width: 1115px;
-  height: 800px;
-} */
-/* #App iframe{
-  width: 100%;
-  height: 500px;
-} */
 .three{
   display: inline;
 }
-
 
 
 

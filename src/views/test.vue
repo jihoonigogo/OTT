@@ -1,38 +1,79 @@
 <template>
-  <v-container>
+  <v-container  >
+    <v-row>
+      <v-col cols="11" class="mx-auto">
+    <v-card class="" style="padding:0; margin:0; border-radius:30px;">
+          <v-img
+            class="white--text"
+            height="120px"
+            src="https://cdn.pixabay.com/photo/2016/05/11/13/20/keyboard-1385706_960_720.jpg"
+            style="border-radius:10px;"
+          ><v-card-title>채팅방</v-card-title>
+          </v-img>
+        </v-card>
+      </v-col>
+    </v-row>
 
-    <div class="carousel">
-      <div class="carousel-item">
-        <img src="https://t1.daumcdn.net/thumb/R720x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/6idc/image/XIuGoXWxOpHLJpctmWaRW7g2MKc.jpeg">
-        <h3>title</h3>
-      </div>
-      <div class="carousel-item">
-        <img src="https://t1.daumcdn.net/thumb/R720x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/6idc/image/XIuGoXWxOpHLJpctmWaRW7g2MKc.jpeg">
-        <h3>title2</h3>
-      </div>
-      <div class="carousel-item">
-        <img src="https://t1.daumcdn.net/thumb/R720x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/6idc/image/XIuGoXWxOpHLJpctmWaRW7g2MKc.jpeg">
-        <h3>title3</h3>
-      </div>
-      <div class="carousel-item">
-        <img src="https://t1.daumcdn.net/thumb/R720x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/6idc/image/XIuGoXWxOpHLJpctmWaRW7g2MKc.jpeg">
-        <h3>title4</h3>
-      </div>
-      <div class="carousel-item">
-        <img src="https://t1.daumcdn.net/thumb/R720x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/6idc/image/XIuGoXWxOpHLJpctmWaRW7g2MKc.jpeg">
-        <h3>title5</h3>
-      </div>
-    </div>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <v-row style="text-align:center; margin-top:50px;">
+      <v-col col="10" offset="1" >
+        <!-- 채팅방이름 ,참여인원수변수 , 클릭이벤트 -->
+        <v-card class="chatroom" >
+          <v-img
+            class="white--text"
+            height="240px"
+            src="https://cdn.pixabay.com/photo/2016/05/11/13/20/keyboard-1385706_960_720.jpg"
+            style="border-top-left-radius:20px; border-top-right-radius:20px;"
+          >
+          비트컴퓨터
+          </v-img>
+          <button type="button" style="background-color:red; color:white; padding:10px; margin:10px;">입장하기</button>
+        </v-card>
+        <v-card class="chatroom">
+          <v-img
+            class="white--text"
+            height="241px"
+            src="https://cdn.pixabay.com/photo/2016/05/11/13/20/keyboard-1385706_960_720.jpg"
+            style="border-top-left-radius:20px; border-top-right-radius:20px;"
+          >
+          비트컴퓨터
+          </v-img>
+          <button type="button" style="background-color:red; color:white; padding:10px; margin:10px;">입장하기</button>
+        </v-card>
+        <v-card class="chatroom">
+          <v-img
+            class="white--text"
+            height="240px"
+            src="https://cdn.pixabay.com/photo/2016/05/11/13/20/keyboard-1385706_960_720.jpg"
+            style="border-top-left-radius:20px; border-top-right-radius:20px;"
+          >
+          비트컴퓨터
+          </v-img>
+          <button type="button" style="background-color:red; color:white; padding:10px; margin:10px;">입장하기</button>
+        </v-card>
+        <v-card class="chatroom">
+          <v-img
+            class="white--text"
+            height="240px"
+            src="https://cdn.pixabay.com/photo/2016/05/11/13/20/keyboard-1385706_960_720.jpg"
+            style="border-top-left-radius:20px; border-top-right-radius:20px; "
+          >
+          비트컴퓨터
+          </v-img>
+          <button type="button" style="background-color:red; color:white; padding:10px; margin:10px;">입장하기</button>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row >
+      <v-col cols="12" >
+        <div class="void" style="height:1000px;" >
+        </div>
+      </v-col>
+    </v-row >  
+    
   </v-container>
 </template>
-<script src="https://cod.jquery.com/jquery-3.4.1.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script>
-$(document).ready(function(){
-    $('.carousel').carousel();
-  });
-</script>
+
+
 <script>
 export default {
   data: () => {
@@ -51,6 +92,22 @@ export default {
 
 <style scoped>
 
+.chatroom{
+  display: inline-block;
+  position: relative;
+  margin-right: 130px;
+  margin-top: 50px;
+  height: 300px;
+  width: 300px;
+  /* right: -50%; */
+  padding: 0px;
+  border-radius: 30px;
+}
+
+.chatroom button{
+  
+  border-radius: 30px;
+}
 
 
 

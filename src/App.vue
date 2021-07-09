@@ -6,8 +6,8 @@
         <v-col md="2" sm="6" id="col1">
           <div class="gohome">
               <a dark href="/" id="gohome"  
-              class="red--text font-weight-black">
-              NETFLIX1
+              class="red--text font-weight-black pa-3">
+              AAC
               </a>
             </div>
         </v-col>
@@ -47,11 +47,11 @@
         <!-- 웹 로그인버튼 -->
         <v-col md="2" id="col3">
           <div class="col-md-2  login">
-            <v-btn dark
+            <v-btn
             to="/" 
             id="login"
             class=" font-weight-black">
-                login
+                <v-icon>mdi-account-circle</v-icon>
             </v-btn>
           </div>
         </v-col>
@@ -102,12 +102,10 @@
 <script>
 export default {
   name: 'App',
-
   components: {
     
   },
  
-
   data: () => ({
     //
     
@@ -144,14 +142,17 @@ export default {
 }  
 .container{
   display: inline;
-  background-color: black;
+  background-color: rgba(0,5,10,1);
 }
-
+.row{
+  display: flex;
+  margin: 0px;
+}
 .header {
   margin: 0px;
   padding: 0px;
   width: 100%;
-  position: fixed;
+  /* position: fixed; */
   display:contents;
   top: 0;
   left: 0;
@@ -162,13 +163,14 @@ export default {
   height: 48px;
   padding: 0px;
   margin-bottom: 10px;
-  font-size: 35px;
+  font-size: 4em;
   font-weight:900;
 }
 .gohome {
   color: red;
   padding: 0px;
-   height: 48px;
+   height: 100px;
+   left: 30%;
 }
 .col-md-2.login{
   padding: 7px;
@@ -185,20 +187,18 @@ export default {
 .col-md-2.gohome{
   padding-top: 0px;
 }
-.row{
-  display: flex;
-  margin: 0px;
-}
+
 #login{
   font-size: 35px;
   font-weight:900;
   right: -280%;
+  background-color: rgba(0, 0, 0, 1);
+  color: white;
 }
 #tabItem{
   font-size: 25px;
   font-weight:900;
 }
-
 a { text-decoration:none;
  /* padding: 3px; */
  } 
@@ -206,21 +206,17 @@ a { text-decoration:none;
    display: none;
  }
 }
-
 /*  모바일 */
 @media screen and (max-width:768px) {
   * {
   box-sizing: border-box;
   font-family: 'Bebas Neue';
 } 
-
-
 .container{
   /* display: inline; */
   
-  background-color: black;
+  background-color: rgba(0,0,50,1);
 }
-
 .header {
   /* margin: 0px; */
   /* margin-bottom: 5px; */
@@ -232,7 +228,6 @@ a { text-decoration:none;
   left: -15%;
   /* z-index: 3; */
 }
-
 a{
   text-decoration: none;
 }

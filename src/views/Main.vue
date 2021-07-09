@@ -41,16 +41,16 @@
     <v-row>
       <v-col cols="12">
         <v-sheet
-        class="netRec"
+        class="netRec ma-8"
         elevation="8"
-        width="100vw"
+        max-width="92vw"
         dark
         >
          <h3 class="font-weight-black">박스오피스 TOP7</h3>
          <v-slide-group
           v-model="netList"
           class="pa-5"
-          center-active
+          
           show-arrows
          >
           <v-slide-item
@@ -62,20 +62,21 @@
             <v-card
             :color="active ? 'red' : 'black'"
             class="ma-5 cards"
-            max-height="200px"
+            max-height="300px"
             width="280px"
             @click="toggle"
             to="/"
             >
-            <h1>{{i+1}}</h1>
+            <h1 style="right:-18%;">{{i+1}}</h1>
             <v-img
               class="white--text align-end"
-              width="10%"
-              height="100%"
+              width="150px"
+              height="240px"
               :src="slide.img"
             >
               <!-- <v-card-title class="cards-title">{{slide.title}}</v-card-title> -->
             </v-img>
+            
           </v-card>
             </v-slide-item>
           </v-slide-group>
@@ -87,6 +88,7 @@
   <v-row>
     <v-col cols="12" md="12">
       <v-sparkline
+      
     :value="value"
     :gradient="gradient"
     :smooth="radius || false"
@@ -251,7 +253,7 @@ export default {
     margin: 0px;
     padding: 0px;
 }
-.cards-title{
+/* .cards-title{
     transform: translateZ(10px);
     text-align: center;
     font-weight: normal;
@@ -259,21 +261,22 @@ export default {
     margin: 0px;
     padding: 0px;
     position: relative;
-}
+} */
 .cards h1{
     font-size: 12em;
     width: 140px;
     height: 200px;
     margin:0px;
     transform: translateZ(1px);
-     position: relative;
+    position: relative;
+    
 
 }
 @keyframes spin {
-   0%{
-    transform: rotateY(-10deg);
-  }100%{
-    transform: rotateY(10deg);
+   from{
+    transform: rotateY(-20deg);
+  }to{
+    transform: rotateY(20deg);
   }
     
 }
