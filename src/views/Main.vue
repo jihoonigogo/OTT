@@ -1,16 +1,9 @@
 <template>
   <v-container class="" fluid>
-    <!-- 웹 캐러셀 -->
-    
-        
+    <!-- 웹 캐러셀 --> 
         <video autoplay loop class="mainvideo" >
-          <source src="../assets/blackwidow.mp4" type="video/mp4"/>
-          123123
+          <source src="../assets/witchers2.mp4" type="video/mp4"/>
         </video>
-        
-        
-       
-    
      <!-- <v-carousel
       cycle
       height="65vh"
@@ -54,7 +47,7 @@
         max-width="92vw"
         dark
         >
-         <h3 class="font-weight-black">박스오피스 TOP7</h3>
+         <h1 class="font-weight-black">박스오피스 TOP7</h1>
          <v-slide-group
           v-model="netList"
           class="pa-5"
@@ -76,7 +69,7 @@
             to="/"
             hover
             >
-            <h1 style="right:-18%;">{{i+1}}</h1>
+            <h1 style="right:-18%; color:black;">{{i+1}}</h1>
             <v-img
               class="white--text align-end"
               width="150px"
@@ -94,8 +87,8 @@
     </v-row>
   </v-content>
   <h3 class="white--text ml-5 font-weight-black">실시간 검색 순위</h3>
-  <v-row>
-    <v-col cols="12" md="12">
+  <v-row justify="center">
+    <!-- <v-col cols="12" md="12">
       <v-sparkline
       class="line"
     :value="value"
@@ -109,9 +102,14 @@
     :type="type"
     :auto-line-width="autoLineWidth"
     auto-draw
-    
-    
   ></v-sparkline>
+    </v-col> -->
+    <v-col cols="3">
+      <v-card>
+        <h1 class="white--text">
+          123213
+        </h1>
+      </v-card>
     </v-col>
   </v-row>
   </v-container>
@@ -129,7 +127,6 @@
 export default {
   data: () => ({
     wavList:null,
-    netList:null,
     watList:null,
       model: 0,
         videos: [
@@ -245,7 +242,7 @@ export default {
 
 /* 추천목록 */
 .netRec{
-  background-color: rgba(0, 0, 255, 0.2);
+  background-color: rgba(22, 22, 22,0.5);
   /* border: solid 1px white; */
   margin-bottom: 10px;
   padding: 0px;
@@ -256,6 +253,7 @@ export default {
     transform-style: preserve-3d;
     perspective: 700px;
     animation: spin 3s infinite linear;
+    
 }
 .cards{
     display: flex;
@@ -266,6 +264,7 @@ export default {
     /* background-color: black; */
     margin: 0px;
     padding: 0px;
+    
 }
 /* .cards-title{
     transform: translateZ(10px);
@@ -281,9 +280,12 @@ export default {
     width: 140px;
     height: 200px;
     margin:0px;
+    /* top: -55%; */
     transform: translateZ(1px);
     position: relative;
-    
+    /* border: 3px solid; */
+    -webkit-text-stroke: gray 3px;    
+    /* background-color: green; */
 
 }
 /* .line {
@@ -302,6 +304,7 @@ export default {
 .mainvideo{
   position: relative;
   max-height: 90vh;
+  top:0%;
   width: 100%;
   object-fit: fill;
   overflow: hidden;

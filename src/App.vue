@@ -3,7 +3,7 @@
     <v-container fluid class="pa-0 ma-0" app >
       <!-- 홈버튼 -->
       <v-row class="header">
-        <div class="col-md-2">
+        <div class="col-md-1">
           <a href="/" id="gohome">
         AAC
           </a>
@@ -54,19 +54,14 @@
           </v-tabs>
         </v-col> -->
         <!-- 언어변경 -->
-        <v-col md="1" id="col3">
-          <div class="col-md-2 login">
-            <v-btn
-            to="/" 
-            id="login"
-            class=" font-weight-black">
-                <v-icon>mdi-account-circle</v-icon>
-            </v-btn>
+        <v-col md="2" class="lang icons">
+          <div class="">
+          <v-select class="lang2" dark>
+          </v-select>
           </div>
         </v-col>
-        <!-- 웹 로그인버튼 -->
-        <v-col md="1" id="col3">
-          <div class="col-md-2  login">
+        <v-col cols="1">
+          <div class="login">
             <v-btn
             to="/" 
             id="login"
@@ -164,10 +159,7 @@ export default {
 };
 </script>
 <style>
-* {
-  box-sizing: border-box;
-  font-family: 'Bebas Neue';
-} 
+
 @media screen and (min-width:769px) {
   * {
   box-sizing: border-box;
@@ -201,10 +193,10 @@ export default {
 }
 #gohome {
   width: 100%;
-  height: 48px;
+  height: 20px;
   padding: 0px;
-  margin-left: 30px;
-  font-size: 4em;
+  margin-left: 20px;
+  font-size: 3em;
   font-weight:900;
   color: red;
 }
@@ -233,7 +225,7 @@ export default {
 #login{
   font-size: 35px;
   font-weight:900;
-  right: -280%;
+ 
   background-color: rgba(0, 0, 0, 1);
   color: white;
 }
@@ -247,6 +239,17 @@ a { text-decoration:none;
  .mLogin,#col4,#mTabs{
    display: none;
  }
+.lang2{
+  /* left: -20%; */
+ width:120px;
+}  
+.header .col-md-2{
+  padding-left: 0px;
+  padding-right: 0px;
+  text-align: center;
+}
+
+
 }
 /*  모바일 */
 @media screen and (max-width:768px) {
@@ -338,5 +341,6 @@ a{
 #gohome{
   font-size: 20px;
 }
+
 }
 </style>
