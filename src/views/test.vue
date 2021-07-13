@@ -17,14 +17,35 @@
     <v-row style="text-align:center; margin-top:50px;">
       <v-col col="10" offset="1" >
         <!-- 채팅방이름 ,참여인원수변수 , 클릭이벤트 -->
-        <v-card class="chatroom " >
+        
+        <div class="chatroomdiv">
+          <h1 class="white--text">123</h1>
+            <v-card class="chatroom" >
+              <v-img
+                class="white--text"
+                height="240px"
+                src="https://cdn.pixabay.com/photo/2016/05/11/13/20/keyboard-1385706_960_720.jpg"
+                style="border-top-left-radius:20px; border-top-right-radius:20px;"
+              >
+              </v-img>
+                <div class="d-inline-flex">
+                  <v-icon class="icon">mdi-account-circle</v-icon>
+                  <h4>number</h4>
+                  <button type="button" >
+                    입장하기
+                  </button>
+                </div>
+            </v-card>
+        </div>
+        <div class="chatroomdiv">
+        <h1 class="white--text">123</h1>
+        <v-card class="chatroom" >
           <v-img
             class="white--text"
             height="240px"
             src="https://cdn.pixabay.com/photo/2016/05/11/13/20/keyboard-1385706_960_720.jpg"
             style="border-top-left-radius:20px; border-top-right-radius:20px;"
           >
-          비트컴퓨터1
           </v-img>
             <div class="d-inline-flex">
               <v-icon class="icon">mdi-account-circle</v-icon>
@@ -34,14 +55,16 @@
               </button>
             </div>
         </v-card>
-        <v-card class="chatroom " >
+        </div>
+        <div class="chatroomdiv">
+        <h1 class="white--text">123</h1>
+        <v-card class="chatroom" >
           <v-img
             class="white--text"
             height="240px"
             src="https://cdn.pixabay.com/photo/2016/05/11/13/20/keyboard-1385706_960_720.jpg"
             style="border-top-left-radius:20px; border-top-right-radius:20px;"
           >
-          비트컴퓨터1
           </v-img>
             <div class="d-inline-flex">
               <v-icon class="icon">mdi-account-circle</v-icon>
@@ -51,14 +74,16 @@
               </button>
             </div>
         </v-card>
-        <v-card class="chatroom " >
+        </div>
+        <div class="chatroomdiv">
+        <h1 class="white--text">123</h1>
+        <v-card class="chatroom" >
           <v-img
             class="white--text"
             height="240px"
             src="https://cdn.pixabay.com/photo/2016/05/11/13/20/keyboard-1385706_960_720.jpg"
             style="border-top-left-radius:20px; border-top-right-radius:20px;"
           >
-          비트컴퓨터1
           </v-img>
             <div class="d-inline-flex">
               <v-icon class="icon">mdi-account-circle</v-icon>
@@ -68,23 +93,7 @@
               </button>
             </div>
         </v-card>
-        <v-card class="chatroom " >
-          <v-img
-            class="white--text"
-            height="240px"
-            src="https://cdn.pixabay.com/photo/2016/05/11/13/20/keyboard-1385706_960_720.jpg"
-            style="border-top-left-radius:20px; border-top-right-radius:20px;"
-          >
-          비트컴퓨터1
-          </v-img>
-            <div class="d-inline-flex">
-              <v-icon class="icon">mdi-account-circle</v-icon>
-              <h4>number</h4>
-              <button type="button" >
-                입장하기
-              </button>
-            </div>
-        </v-card>
+        </div>
       </v-col>
     </v-row>
     <v-row >
@@ -92,7 +101,6 @@
         <div class="void" style="height:1000px;" >
           
         </div>
-        
       </v-col>
     </v-row >  
   </v-container>
@@ -122,7 +130,8 @@ export default {
   display: inline-block;
   position: relative;
   margin-right: 130px;
-  margin-top: 50px;
+  margin-top: 10px;
+  /* padding-top: 50px; */
   height: 300px;
   width: 300px;
   /* right: -50%; */
@@ -147,7 +156,12 @@ export default {
 .icon {
   left: -35px;
 }
-
-
-
+.chatroomdiv{
+  display: inline-block;
+}
+.chatroomdiv h1{
+  text-align: center;
+  width: 300px;
+  /* bottom: -10%; */
+}
 </style>
