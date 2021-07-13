@@ -9,10 +9,10 @@
       </v-col>
     </v-row>
 
-    <v-row>
+    <!-- <v-row>
       <v-col cols="4" offset="2">
       </v-col>
-    </v-row>
+    </v-row> -->
     <v-row justify="">
       <!-- <v-col cols="2"></v-col> -->
        <v-col
@@ -20,7 +20,6 @@
       class="py-2"
       offset="2"
     >
-   
       <v-btn-toggle dark
         v-model="text"
         color="white"

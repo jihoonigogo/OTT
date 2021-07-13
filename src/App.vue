@@ -54,13 +54,15 @@
           </v-tabs>
         </v-col> -->
         <!-- 언어변경 -->
-        <v-col md="2" class="lang icons">
-          <div class="">
-          <v-select class="lang2" dark>
-          </v-select>
-          </div>
-        </v-col>
-        <v-col cols="1">
+            <v-col
+            class="col-md-2">
+                <v-select >
+                
+                </v-select>
+            </v-col>
+            <!-- 로그인 다이얼로그 -->
+            <v-col
+            class="col-md-1">
           <div class="login">
             <v-btn
             to="/" 

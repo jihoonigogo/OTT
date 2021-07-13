@@ -1,9 +1,14 @@
 <template>
   <v-container class="" fluid>
     <!-- 웹 캐러셀 --> 
+    <div class="mainbanner">
         <video autoplay loop class="mainvideo" >
           <source src="../assets/witchers2.mp4" type="video/mp4"/>
         </video>
+        <div class="movietext">
+        <p class="white--text "> 위쳐 시즌2 </p>
+        </div>
+    </div>
      <!-- <v-carousel
       cycle
       height="65vh"
@@ -40,11 +45,12 @@
 
   <v-content>
     <v-row>
-      <v-col cols="12">
+      <v-col cols="12" offset="">
         <v-sheet
-        class="netRec ma-8"
+        
+        class="netRec ma-10"
         elevation="8"
-        max-width="92vw"
+        max-width="100vw"
         dark
         >
          <h1 class="font-weight-black">박스오피스 TOP7</h1>
@@ -62,7 +68,7 @@
           >
             <v-card
             :color="active ? 'red' : 'black'"
-            class="ma-5 cards"
+            class="ma-7 cards"
             max-height="300px"
             width="280px"
             @click="toggle"
@@ -130,7 +136,8 @@ export default {
     watList:null,
       model: 0,
         videos: [
-          {id:1,title:'blackwidow',video:'@/assets/blackwidow.mp4'}
+          {id:1,title:'블랙위도우',video:'../assets/blackwidow.mp4'},
+          {id:2,title:'위쳐2',video:'../assets/witchers2.mp4'}
         ],
         slides: [
           {title:'베놈2', to:"" ,syno:'blabla... ',img:'https://cdn.eyesmag.com/content/uploads/posts/2021/02/17/disney-cruella-new-poster-emma-stone-1-d28a46b1-8f9f-49ab-b405-7efaf62d55c2.jpg'},
@@ -140,6 +147,7 @@ export default {
           {title:'콰이어트플레이스2', to:"" ,syno:'blabla',img:'https://img.hankyung.com/photo/202106/01.26629700.1.jpg'},
           {title:'오늘점심', to:"" ,syno:'돈까스',img:'https://t1.daumcdn.net/thumb/R720x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/6idc/image/XIuGoXWxOpHLJpctmWaRW7g2MKc.jpeg'},
           {title:'베놈2', to:"" ,syno:'blabla... ',img:'https://cdn.eyesmag.com/content/uploads/posts/2021/02/17/disney-cruella-new-poster-emma-stone-1-d28a46b1-8f9f-49ab-b405-7efaf62d55c2.jpg'},
+          
          ],
          width: 3,
       radius: 10,
@@ -247,6 +255,7 @@ export default {
   margin-bottom: 10px;
   padding: 0px;
   top: -10%;
+  /* justify-content: end; */
 }
 .card-item{
     margin: 30px;
@@ -286,7 +295,14 @@ export default {
     /* border: 3px solid; */
     -webkit-text-stroke: gray 3px;    
     /* background-color: green; */
-
+}
+.movietext{
+  font-size: 2em;
+  position: absolute;
+  margin-top: -24px; text-align: center; font-size: 48px; 
+}
+.mainbanner{
+  position: relative;
 }
 /* .line {
   transform: translateZ(20px);
